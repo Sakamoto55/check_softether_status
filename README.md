@@ -6,21 +6,21 @@ STATE_WARNING=1
 STATE_CRITICAL=2
 STATE_UNKNOWN=3
 
-for status in $(vpncmd localhost /server  /hub:care2hub /cmd statusget|grep "Status"|tail -1|cut -b 31-)
+        for status in $(vpncmd localhost /server  /hub:care2hub /cmd statusget|grep "Status"|tail -1|cut -b 31-)
 
-do
+        do
 
-        if [ "$status" == Online ]
+                if [ "$status" == Online ]
 
-        then
+                then
 
-        echo $STATE_OK
+                echo $STATE_OK
 
-        else
+                 else
 
-        echo $STATE_CRITICAL 
+                 echo $STATE_CRITICAL 
 
-        fi
+                 fi
 
-done
+        done
 
